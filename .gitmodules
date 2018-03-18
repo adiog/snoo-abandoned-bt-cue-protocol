@@ -1,0 +1,6 @@
+[submodule "deps/googletest"]
+	path = deps/googletest
+	url = https://github.com/google/googletest
+[submodule "deps/libcrc"]
+	path = deps/libcrc
+	url = https://github.com/adiog/embed-libcrc
