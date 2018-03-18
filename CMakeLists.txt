@@ -8,7 +8,7 @@ INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/test)
 
 FILE(GLOB_RECURSE sources ${CMAKE_CURRENT_SOURCE_DIR}/src/**.c)
 FILE(GLOB_RECURSE headers ${CMAKE_CURRENT_SOURCE_DIR}/include/**.h)
-ADD_LIBRARY(usart-protocol ${sources} ${headers})
+ADD_LIBRARY(snoo-cue-protocol ${sources} ${headers})
 
 
 IF(ENABLE_PROTOCOL_TESTING)
@@ -31,7 +31,7 @@ IF(ENABLE_PROTOCOL_TESTING)
                 GET_FILENAME_COMPONENT(test_name ${current_path}/${child} NAME_WE)
                 IF ("${test_ext}" STREQUAL ".cpp")
                     ADD_EXECUTABLE(${test_name} ${current_path}/${child})
-                    TARGET_LINK_LIBRARIES(${test_name} usart-protocol pthread gtest)
+                    TARGET_LINK_LIBRARIES(${test_name} snoo-cue-protocol pthread gtest)
                     ADD_TEST(${test_name} ${test_name})
                     MESSAGE("-- CollectTests -- Adding executable ${test_name} - done")
                 ENDIF ()

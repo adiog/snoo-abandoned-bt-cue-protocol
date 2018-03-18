@@ -16,7 +16,8 @@ extern const uint8_t HEADER_PAYLOAD_LENGTH_OFFSET;
 
 typedef enum {
     PAYLOAD_PING = 0x00U,
-    PAYLOAD_PONG = 0x01U
+    PAYLOAD_PONG = 0x01U,
+    PAYLOAD_SENSOR = 0x02U
 } PayloadId;
 
 
@@ -54,6 +55,19 @@ typedef struct
     PongPayload payload;
 } __attribute__((packed)) PongPacket;
 
+typedef struct
+{
+    float accelerometerMSS[3];
+    float gyroscopeRads[3];
+    float magnetometerMicroT[3];
+    float temperatureCelcius;
+} __attribute__((packed)) SensorPayload;
+
+typedef struct
+{
+    PacketHeader header;
+    SensorPayload payload;
+} __attribute__((packed)) SensorPacket;
 
 typedef void (*processIncomingPacket_t)(const uint8_t *);
 

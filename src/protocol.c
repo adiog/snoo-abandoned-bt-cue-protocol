@@ -25,11 +25,13 @@ extern inline uint8_t calculatePacketCrc(const uint8_t *packet)
 
 const uint8_t packetLengthById[8] = {
     sizeof(PingPacket),
-    sizeof(PongPacket)};
+    sizeof(PongPacket),
+    sizeof(SensorPacket)};
 
 const uint8_t payloadLengthById[8] = {
     sizeof(PingPayload),
-    sizeof(PongPayload)};
+    sizeof(PongPayload),
+    sizeof(SensorPayload)};
 
 extern inline uint8_t getPacketLength(const uint8_t *packet)
 {
