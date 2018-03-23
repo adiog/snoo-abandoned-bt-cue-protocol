@@ -7,6 +7,10 @@ extern "C" {
 
 #include <stdint.h>
 
+#define AXIS 3
+#define THREE_AXIS {0,1,2}
+#define FREQUENCY 100
+
 extern const uint8_t PACKET_HEADER_START_MARKER;
 
 extern const uint8_t HEADER_START_MARKER_OFFSET;
