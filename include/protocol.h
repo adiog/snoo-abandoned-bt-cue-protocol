@@ -65,6 +65,8 @@ typedef struct
     float gyroscopeRads[3];
     float magnetometerMicroT[3];
     float temperatureCelcius;
+    float xAngleAfterFusion[3];
+    float yAngleAfterFusion[3];
 } __attribute__((packed)) SensorPayload;
 
 typedef struct
