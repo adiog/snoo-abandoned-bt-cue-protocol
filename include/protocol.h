@@ -9,7 +9,7 @@ extern "C" {
 
 #define AXIS 3
 #define THREE_AXIS {0,1,2}
-#define FREQUENCY 100
+#define FREQUENCY 50
 
 extern const uint8_t PACKET_HEADER_START_MARKER;
 
@@ -67,6 +67,9 @@ typedef struct
     float temperatureCelcius;
     float xAngleAfterFusion[3];
     float yAngleAfterFusion[3];
+    float xJoypad;
+    float yJoypad;
+    uint8_t joypadButton;
 } __attribute__((packed)) SensorPayload;
 
 typedef struct
